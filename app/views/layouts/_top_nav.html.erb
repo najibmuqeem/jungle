@@ -30,6 +30,29 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span>Signed in as <%= current_user.first_name %></span>
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Logout", '/logout' %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span>Account</span>
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Login', '/login' %></li>
+              <li><%= link_to 'Register', '/register' %></li>
+            </ul>
+          </li>
+        <% end %>
+
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -39,6 +62,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to 'Dashboard', [:admin, :root] %></li>
             <li><%= link_to 'Products',  [:admin, :products] %></li>
+            <li><%= link_to 'Categories',  [:admin, :products] %></li>
           </ul>
         </li>
         <li>
