@@ -1,2 +1,6 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h3 class="alert bg-success">Total Products: 
+  <%= link_to @product_count, '/admin/products' %>
+</h3>
+<h3 class="alert bg-info">Total Categories:
+  <%= link_to @category_count,'/admin/products' %>
+</h3>
