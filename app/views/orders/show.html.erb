@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @order.line_items.each do |item| %>
+        <% @line_items.each do |item| %>
           <%= render 'line_item', product: item.product, quantity: item.quantity.to_i %>
         <% end %>
       </tbody>
